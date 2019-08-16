@@ -11,7 +11,7 @@
 
 **例如:** 一个五子棋游戏,面向过程的解决方案一般如下:
 
-![pop](./imgs/05/pop.png)
+![pop](https://s2.ax1x.com/2019/08/16/mZElAP.png)
 
 这样的方式符合一般的数学上的程序定义,但当问题的规模逐渐增大,问题的复杂性增长,求解问题的步骤就要增多,面向过程的编程就会逐渐体现出劣势.
 
@@ -68,7 +68,7 @@ Date today = new Date();
 ```
 如下图所示,对象变量today引用了新建的对象
 
-![ref](./imgs/05/ref.png)
+![ref](https://s2.ax1x.com/2019/08/16/mZEK0I.png)
 
 在对象与对象变量之间存在这一个重要的区别.例如,语句
 ```
@@ -91,7 +91,7 @@ birthday = today;
 ```
 现在,这两个变量引用同一个对象
 
-![same-ref](./imgs/05/same-ref.png)
+![same-ref](https://s2.ax1x.com/2019/08/16/mZEM7t.png)
 
 一定要认识到:一个对象变量并没有实际包含一个对象,而仅仅引用一个对象.
 
@@ -342,14 +342,14 @@ Integer number =Integer.valueOf("3");
 由于语言的特性，Java 的构造函数都是跟类名一样的。这导致的一个问题是构造函数的名称不够灵活，经常不能准确地描述返回值，在有多个重载的构造函数时尤甚，如果参数类型、数目又比较相似的话，那更是很容易出错。
 
 比如:Date类的六个构造函数.
-![constructors_of_date](./imgs/05/static_factory.png)
+![constructors_of_date](https://s2.ax1x.com/2019/08/16/mZEunA.png)
 Date 类有很多重载函数，对于开发者来说，假如不是特别熟悉的话，恐怕是需要犹豫一下，才能找到合适的构造函数的。而对于其他的代码阅读者来说，估计更是需要查看文档，才能明白每个参数的含义了。
 
 （当然，Date 类在目前的 Java 版本中，只保留了一个无参和一个有参的构造函数，其他的都已经标记为 @Deprecated 了）
 
 而如果使用静态工厂方法，就可以给方法起更多有意义的名字，比如前面的 valueOf、newInstance、getInstance 等，对于代码的编写和阅读都能够更清晰。
 
-2. 不用每次调用时都创建新的对象
+1. 不用每次调用时都创建新的对象
 
 有时候外部调用者只需要拿到一个实例，而不关心是否是新的实例；又或者我们想对外提供一个单例时 —— 如果使用工厂方法，就可以很容易的在内部控制，防止创建不必要的对象，减少开销。
 
@@ -385,7 +385,7 @@ tripleValue(percent);
 不过结果并没有成功.调用这个方法之后,percent的值还是10.
 具体的执行过程如下图
 
-![method_args](./imgs/05/method.png)
+![method_args](https://s2.ax1x.com/2019/08/16/mZE1tf.png)
 图中的main()表示的是main方法它表示一个栈帧
 1. main方法中调用tripleValue()并把percent值的拷贝传给tripleValue栈帧中的x
 2. x被扩大为3倍

@@ -407,14 +407,14 @@ StringBuilder todoList = new StringBuilder();
 或者,可以指定一个初始化字符串("To do:\n");
 这种同名的特征叫做重载(overloading).。如果多个方法有 相同的名字、不同的参数，便产生了重载
 
->**注意**:：Java 允许重载任何方法， 而不只是构造器方法。因此，要完整地描述一个方法，需要指出方法名以及参数类型。这叫做方法的签名（signature)。
->
->返回类型不是方法签名的一部分。也就是说， 不能有两个名字相同、 参数类型也相同却返回不同类型值的方法。
+!>**注意** : Java 允许重载任何方法， 而不只是构造器方法。因此，要完整地描述一个方法，需要指出方法名以及参数类型。这叫做方法的签名（signature)。<br>
+返回类型不是方法签名的一部分。也就是说， 不能有两个名字相同、 参数类型也相同却返回不同类型值的方法。
 
 ### 5.6.2 默认域初始化
 
 如果在构造器中没有显式地给域赋予初值，那么就会被自动地赋为默认值： 数值为 0、 布尔值为 false、 对象引用为null。然而，只有缺少程序设计经验的人才会这样做。确实， 如 果不明确地对域进行初始化，就会影响程序代码的可读性。
-> **注意** 局部变量不会被初始化为特定的初始值
+
+!> **注意** : 局部变量不会被初始化为特定的初始值
 
 ### 5.6.3 无参数的构造器
 
@@ -442,7 +442,7 @@ this();
 - 在声明中赋值 
 
 实际上，Java 还有第三种机制， 称为初始化块（initializationblock)。在一个类的声明中， 可以包含多个代码块。只要构造类的对象，这些块就会被执行。例如:
-```
+```java
 class Student{
     private static int nextId = 1;
     
@@ -483,16 +483,16 @@ Java使用包(package)将类组织起来,借助于包可以方便的组织自己
 ### 5.7.1 类的导入
 一个类可以使用所属包中的所有类,以及其他包中的共有类我们可以采用两种方式访问另一个包中的公有类
 1. 使用每个类的全限定类名
-```
+```java
 java.time.LocalDate today = java.time.LocalDate.now();
 ```
 这显然很繁琐
 2. 使用import语句
-```
+```java
 import java.util.*;
 ```
 然后就可以使用
-```
+```java
 LocalDate today = LocalDate.now();
 ```
 
@@ -501,11 +501,11 @@ LocalDate today = LocalDate.now();
 import 语句不仅可以导人类，还增加了导人静态方法和静态域的功能。 
 
 例如:
-```
+```java
 import static java.lang.System.*;
 ```
 就可以使用System中的静态方法和静态域,而不必加上类前缀:
-```
+```java
 out.println("Hello world!");
 exit(0);
 ```
@@ -515,7 +515,7 @@ exit(0);
 要想使用包,就必须将包的名字放在源文件的开头,然后将包中的文件放到与完整的包名匹配的子目录中.
 
 例如:
-```
+```java
 package cn.ntboy.entity
 
 public class Student{
@@ -566,22 +566,22 @@ JDK 包含一个很有用的工具,叫做javadoc,它可以由源文件生成一�
 ### 5.9.5 通用注释
 
 下面的标记可以用在类文档的注释中。 
-- `@author` 姓名 这个标记将产生一个 "author" (作者）条目。可以使用多个@author 标记，每个`@author` 标记对应一个作者 
-- `@version` 这个标记将产生一个“ version”（版本）条目。这里的文本可以是对当前版本的任何描述。 
+- `@author 姓名` 这个标记将产生一个 "author" (作者）条目。可以使用多个@author 标记，每个`@author` 标记对应一个作者 
+- `@version 版本` 这个标记将产生一个“ version”（版本）条目。这里的文本可以是对当前版本的任何描述。 
 面的标记可以用于所有的文档注释中。 
-- `@since` 文本 这个标记将产生一个 "since" （始于）条目。这里的 text 可以是对引人特性的版本描 述。
-例如，`@since version 1.7.10`
+- `@since 文本` 这个标记将产生一个 "since" （始于）条目。这里的 text 可以是对引人特性的版本描 述。例如，`@since version 1.7.10`
 - `@deprecated` 这个标记将对类、方法或变量添加一个不再使用的注释。文本中给出了取代的建议。 
 例如， `@deprecated Use <code> setVIsible(true)</code> instead 通过@see 和@link标记，可以使用超级链接， 链接到 javadoc 文档的相关部分或外 部文档。`
-- `@see` 引用 这个标记将在 "see also" 部分增加一个超级链接。它可以用于类中，也可以用于方 法中。
+- `@see 引用` 这个标记将在 "see also" 部分增加一个超链接。它可以用于类中，也可以用于方法中。
 这里的引用可以选择下列情形之一： 
+
 ```
 package.class#feature label 
 <a href="...">label/a> 
 text
 ```
 
-第一种情况是最常见的。只要提供类、方法或变量的名字，javadoc 就在文档中插入 一个超链接。
+第一种情况是最常见的。只要提供类、方法或变量的名字，javadoc 就在文档中插入一个超链接。
 例如， 
 ```
 @see com.horstraann.corejava.Employee#raiseSalary(double)
@@ -595,10 +595,10 @@ Java 编译器本身可以熟练地断定句点在分隔包、 子包、类、�
 
 例如： 
 ```
-@see <a href="m«w.horstmann.com/corejava.htinl">The Core ]ava home page</a>
+@see <a href="www.horstmann.com/corejava.html">The Core Java home page</a>
 ``` 
-在上述各种情况下， 都可以指定一个可选的标签（label) 作为链接锚（link anchor). 如果省略了 label, 用户看到的锚的名称就是目标代码名或 URL。 
-如果@see 标记后面有一个双引号（"）字符，文本就会显示在 “ see also” 部分。 
+在上述各种情况下， 都可以指定一个可选的标签(label)作为链接锚(link anchor). 如果省略了 label, 用户看到的锚的名称就是目标代码名或 URL。 
+如果@see 标记后面有一个双引号(")字符，文本就会显示在 "see also" 部分。 
 
 例如， 
 ```
@@ -617,7 +617,7 @@ Java 编译器本身可以熟练地断定句点在分隔包、 子包、类、�
 ### 5.9.6 包与概述注释
 
 可以直接将类、方法和变量的注释放置在 Java 源文件中，只要用 `/** . . . */` 文档注释界 定就可以了。但是， 要想产生包注释，就需要在每一个包目录中添加一个单独的文件。可以 有如下两个选择： 
-1. 提供一个以 package.html 命名的 HTML 文件。在标记 <body>—</body> 之间的所有 文本都会被抽取出来。 
+1. 提供一个以 package.html 命名的 HTML 文件。在标记 `<body> - </body>` 之间的所有文本都会被抽取出来。 
 2. 提供一个以 package-info.java命名的 Java 文件。这个文件必须包含一个初始的以 `/**` 和 `*/` 界定的 Javadoc 注释， 跟随在一个包语句之后。它不应该包含更多的代码或注释。 
 
 还可以为所有的源文件提供一个概述性的注释。这个注释将被放置在一个名为 `overview.html` 的文件中，这个文件位于包含所有源文件的父目录中。标记 `<body>... </body>` 间的所 有文本将被抽取出来。当用户从导航栏中选择“ Overview” 时，就会显示出这些注释内容。 

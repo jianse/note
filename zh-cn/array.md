@@ -94,13 +94,13 @@ String[] scNames={"James","Sarah","Artanis"};
 String[] names=scNames;
 ```
 
-![array_shallow_copy](./imgs/04/array_shallow_copy.png)
+![array_shallow_copy](https://s2.ax1x.com/2019/08/16/mZibTK.png)
 
 如果希望将一个数组的所有值拷贝到一个新的数组中去(即**深拷贝**)， 就要使用 Arrays 类的 copyOf方法：
 ```java
 String[] names=Arrays.copyOf(scNames,scNames.length);
 ```
-![array_deep_copy](./imgs/04/array_deep_copy.png)
+![array_deep_copy](https://s2.ax1x.com/2019/08/16/mZiHw6.png)
 
 ## 4.5 数组排序
 
@@ -144,7 +144,7 @@ balances[i][j];
 > 
 > 到目前为止，读者所看到的数组与其他程序设计语言中提供的数组没有多大区别。但实际存在着一些细微的差异， 而这正是 Java 的优势所在：Java 实际上没有多维数组，只有一维 数组。多维数组被解释为"**数组的数组**"。
 > 
-> ![irregular_array](./imgs/04/irregular_array.png)
+> ![irregular_array](https://s2.ax1x.com/2019/08/16/mZi7ex.png)
 > 
 > 上图是一个杨辉三角形的例子
 >

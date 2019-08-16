@@ -6,7 +6,7 @@
 
 如下图:
 
-![collection_framework](https://s2.ax1x.com/2019/08/16/mZliKf.png)
+![collection_framework](https://s2.ax1x.com/2019/08/16/mZNHxJ.png)
 
 ## 9.1 Collection
 

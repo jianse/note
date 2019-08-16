@@ -6,21 +6,47 @@
 
 如下图:
 
-![collection_framework](./imgs/09/collection_frame.png)
+![collection_framework](https://s2.ax1x.com/2019/08/16/mZliKf.png)
 
 ## 9.1 Collection
 
 Collection接口定义了所有Collection的公共行为
 
 主要的方法有:
+- 判断Collection是否为空
+```
+isEmpty()
+```
 
+- 向Collection中添加元素
+```
 add(T item);
+```
 
+- 移除Collection中的元素
+```
+remove(T item)
+```
+
+- 获得Collection的迭代器
+```
 iterate();
-
-
+```
 
 ## 9.2 List
+
+List接口是Collection接口下的一支,List是Collection的更具体的一类
+
+### 9.2.1 List的特点
+
+1. 元素(逻辑上)以线性方式存储
+2. 可以存放重复对象
+3. 元素是有序的
+4. 可以进行随机存取
+
+### 9.2.2 ArrayList实现类
+
+### 9.2.3 LinkedList实现类
 
 ## 9.3 Set
 

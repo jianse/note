@@ -386,6 +386,7 @@ tripleValue(percent);
 具体的执行过程如下图
 
 ![method_args](https://s2.ax1x.com/2019/08/16/mZE1tf.png)
+
 图中的main()表示的是main方法它表示一个栈帧
 1. main方法中调用tripleValue()并把percent值的拷贝传给tripleValue栈帧中的x
 2. x被扩大为3倍

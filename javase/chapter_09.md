@@ -75,6 +75,8 @@ LiskedList是List的链表实现,链表解决了数组插入删除慢的缺点 ,
 
 LinkedList插入删除效率较高,但是不能进行常数复杂度的随机访问,所以适用于多增删,少随机访问的使用场景.
 
+!> [LinkedList](#_945-linkedlist) 同时也实现了Deque接口
+
 ### 9.2.6 时间复杂度比较
 
 操作|ArrayList时间复杂度|LinkedList时间复杂度
@@ -208,6 +210,12 @@ pop()       |removeFirst()
 peek()      |peekFirst()
 
 ### 9.4.4 ArrayDeque
+
+ArrayDeque是一个可变大小的无界双端队列,它的底层使用数组实现.他们不是线程安全的,禁止使用空元素
+
+### 9.4.5 LinkedList
+
+上面提到了List接口下的[LinkedList](#_925-linkedlist) , 现在我们要重新提起它 , 它同时实现了Deque 接口 , 这意味着它同时也是一个双端队列 , 并且LinkedList允许插入`null`值.
 
 ## 9.5 Map
 

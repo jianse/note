@@ -263,11 +263,67 @@ Hashtable类可以看作HashMap类的前身,它在java1.1时被引入,而HashMap
 
 ### 9.5.6 Properties
 
-Properties (Java.util.Properties) 是Hashtable类的子类，该类主要用于读取Java的配置文件 , 不同的编程语言有自己所支持的配置文件 , 配置文件中很多变量是经常改变的 , 为了方便用户的配置 , 能让用户够脱离程序本身去修改相关的变量设置。就像在Java中 , 其配置文件常为.properties文件，是以键值对的形式进行参数配置的。
+Properties (Java.util.Properties) 是Hashtable类的子类 , 该类并不是集合框架的一员 , 该类主要用于读取Java的配置文件 , 不同的编程语言有自己所支持的配置文件 , 配置文件中很多变量是经常改变的 , 为了方便用户的配置 , 能让用户够脱离程序本身去修改相关的变量设置。就像在Java中 , 其配置文件常为.properties文件，是以键值对的形式进行参数配置的。
 
 ## 9.6 集合、泛型、多态与面向接口
 
 ### 9.6.1 集合与泛型
+
+之前我们使用集合时一般是这样的
+
+```java
+ArrayList list = new ArrayList();
+list.add("hello");
+list.add("world");
+```
+
+但是这样的使用有什么坏处吗?
+
+让我们考虑一下这样的场景 , 你使用一个ArrayList来存放一个学生列表.
+
+```java
+Student s1 = ...;
+Student s2 = ...;
+
+ArrayList students = new ArrayList();
+
+students.add(s1);
+students.add(s2);
+```
+
+emm 看起来不错~
+
+你决定为学生录入一些成绩.
+
+```java
+Student s1 = ...;
+Student s2 = ...;
+
+ArrayList students = new ArrayList();
+
+students.add(s1);
+students.add(s2);
+
+Steudnt stu = (Student)students.get(0);
+stu.setScore(100);
+```
+
+看起来也还不错 . 那么现在让我们往学生列表里面添加一些奇怪的东西 .
+
+```java
+Student s1 = ...;
+Student s2 = ...;
+
+ArrayList students = new ArrayList();
+
+students.add(s1);
+students.add(s2);
+students.add("hello");
+
+Steudnt stu = (Student)students.get(0);
+stu.setScore(100);
+```
+
 
 ### 9.6.2 集合与多态 
 

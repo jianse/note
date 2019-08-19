@@ -227,17 +227,51 @@ Map 是一种键-值对（key-value）集合，Map 集合中的每一个元素�
 
 ### 9.5.2 HashMap
 
+HashMap是使用散列表(哈希表)实现的,是Map的非同步实现 , 此实现提供所有可选的映射操作 , 并允许使用`null值`和`null键` . 此类不保证映射的顺序 , 特别是它不保证该顺序恒久不变 .
 
+?> _TODO_ 添加链接到数据结构 , hashCode(), equals()
 
 ### 9.5.3 LinkedHashMap
 
+LinkedHashMap是HashMap的子类它扩展了HashMap的内部结构Entry , 让Entry包含了一个向前的和一个向后的引用,这样插入的Entry就可以构成一个链表
+
 ### 9.5.4 TreeMap
 
-### 9.5.5 HashTable
+TreeMap 是一个有序的key-value集合，它是通过红黑树实现的。
+
+TreeMap 继承于AbstractMap，所以它是一个Map，即一个key-value集合。
+
+TreeMap 实现了NavigableMap接口，意味着它支持一系列的导航方法。比如返回有序的key集合。
+
+TreeMap 实现了Cloneable接口，意味着它能被克隆。
+
+TreeMap 实现了java.io.Serializable接口，意味着它支持序列化。
+
+TreeMap基于红黑树（Red-Black tree）实现。该映射根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator 进行排序，具体取决于使用的构造方法。
+
+TreeMap的基本操作 containsKey、get、put 和 remove 的时间复杂度是 log(n) 。
+
+另外，TreeMap是非同步的。 它的iterator 方法返回的迭代器是fail-fastl的。
+
+?> _TODO_ 添加链接到数据结构
+
+### 9.5.5 Hashtable
+
+Hashtable类可以看作HashMap类的前身,它在java1.1时被引入,而HashMap产生于JDK 1.2
+
+!>  [HashMap和HashTable的不同](https://www.cnblogs.com/xinzhao/p/5644175.html)
 
 ### 9.5.6 Properties
 
+Properties (Java.util.Properties) 是Hashtable类的子类，该类主要用于读取Java的配置文件 , 不同的编程语言有自己所支持的配置文件 , 配置文件中很多变量是经常改变的 , 为了方便用户的配置 , 能让用户够脱离程序本身去修改相关的变量设置。就像在Java中 , 其配置文件常为.properties文件，是以键值对的形式进行参数配置的。
+
 ## 9.6 集合、泛型、多态与面向接口
+
+### 9.6.1 集合与泛型
+
+### 9.6.2 集合与多态 
+
+### 9.6.3 面向接口
 
 ## 9.7 Collections和Arrays工具类
 

@@ -510,4 +510,5 @@ J.U.C并发包，即java.util.concurrent包，是JDK的核心工具包，是JDK1
 
 其中juc-collections包含了许多在多线程框架下常用的集合类
 
-!> 详见[java多线程进阶](https://segmentfault.com/a/1190000015558984)
+!> **详见**[java多线程进阶](https://segmentfault.com/a/1190000015558984)<br>
+**扩展**[跟着动画学多线程](https://sourceforge.net/projects/javaconcurrenta/)

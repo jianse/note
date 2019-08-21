@@ -12,13 +12,13 @@ Collection接口定义了所有Collection的公共行为
 
 主要的方法有:
 
-方法名|操作
-:--:|:--:
-`isEmpty()`|判断Collection是否为空
-`contains(Object o)`|判断元素是否在Collection中
-`add(T item);`|向Collection中添加元素
-`remove(T item)`|移除Collection中的元素
-`iterate();`|获得Collection的迭代器
+|        方法名        |            操作            |
+| :------------------: | :------------------------: |
+|     `isEmpty()`      |   判断Collection是否为空   |
+| `contains(Object o)` | 判断元素是否在Collection中 |
+|    `add(T item);`    |   向Collection中添加元素   |
+|   `remove(T item)`   |   移除Collection中的元素   |
+|     `iterate();`     |   获得Collection的迭代器   |
 
 
 ## 9.2 List
@@ -46,13 +46,13 @@ Stack是一种先进后出(LIFO)的容器,它是Vector的子类,这意味着Stac
 
 Stack类为自身提供独立的操作方法
 
-方法名|操作
-:--:|:--:
-`empty()`| 判断栈是否为空
-`peek()`| 查看栈顶元素并且不出栈
-`pop()`|弹栈 : 出栈栈顶元素
-`push(E item)`|压栈 : 将元素压入栈顶
-`search(Object o)`|查询元素与栈顶的距离
+|       方法名       |          操作          |
+| :----------------: | :--------------------: |
+|     `empty()`      |     判断栈是否为空     |
+|      `peek()`      | 查看栈顶元素并且不出栈 |
+|      `pop()`       |  弹栈 : 出栈栈顶元素   |
+|   `push(E item)`   | 压栈 : 将元素压入栈顶  |
+| `search(Object o)` |  查询元素与栈顶的距离  |
 
 
 Stack也是java 1.0 时引入的 , java 1.2 时引入了[Deque](#deque)接口,Deque接口及其实现提供了更完整和一致的LIFO堆栈操作集，应优先使用此类。
@@ -77,12 +77,12 @@ LinkedList插入删除效率较高,但是不能进行常数复杂度的随机访
 
 ### 9.2.6 时间复杂度比较
 
-操作|ArrayList时间复杂度|LinkedList时间复杂度
-:--:|:--:|:--:
-读取get(index)          |O(1)   |O(n)
-添加add(E)              |O(1)   |O(1)
-指定位置添加add(index,E)|O(n)   |O(n)
-删除remove(E)           |O(n)   |O(1)
+|           操作           | ArrayList时间复杂度 | LinkedList时间复杂度 |
+| :----------------------: | :-----------------: | :------------------: |
+|      读取get(index)      |        O(1)         |         O(n)         |
+|        添加add(E)        |        O(1)         |         O(1)         |
+| 指定位置添加add(index,E) |        O(n)         |         O(n)         |
+|      删除remove(E)       |        O(n)         |         O(1)         |
 
 ## 9.3 Set
 
@@ -120,11 +120,11 @@ Queue提供了两种操作Queue的方式
 
 **队列方法总结**
 
-&nbsp;|抛出异常|返回特殊值
-:--:|:--:|:--:
-插入|add(e)|offer(e)
-删除|remove()|poll()
-检查|element()|peek()
+| &nbsp; | 抛出异常  | 返回特殊值 |
+| :----: | :-------: | :--------: |
+|  插入  |  add(e)   |  offer(e)  |
+|  删除  | remove()  |   poll()   |
+|  检查  | element() |   peek()   |
 
 Queue实现通常不允许插入`null`元素,即使允许也不应该被插入到Queue中,因为在poll()方法中返回null用来指示队列为空.
 
@@ -188,24 +188,24 @@ Deque扩展了Queue.当deque用作队列时，会产生FIFO（先进先出）行
 
 **Queue与Deque方法比较**
 
-Queue方法|Deque方法
-:--:|:--:
-add(e)      |addLast(e)
-offer(e)    |offerLast(e)
-remove()    |removeFirst()
-poll()      |pollFirst()
-element()   |getFirst()
-peek()      |peekFirst()
+| Queue方法 |   Deque方法   |
+| :-------: | :-----------: |
+|  add(e)   |  addLast(e)   |
+| offer(e)  | offerLast(e)  |
+| remove()  | removeFirst() |
+|  poll()   |  pollFirst()  |
+| element() |  getFirst()   |
+|  peek()   |  peekFirst()  |
 
 同时Deque也可以当作Stack使用
 
 **Stack与Deque方法比较**
 
-Stack方法|Deque方法
-:--:|:--:
-push(e)     |addFirst(e)
-pop()       |removeFirst()
-peek()      |peekFirst()
+| Stack方法 |   Deque方法   |
+| :-------: | :-----------: |
+|  push(e)  |  addFirst(e)  |
+|   pop()   | removeFirst() |
+|  peek()   |  peekFirst()  |
 
 ### 9.4.4 ArrayDeque
 
@@ -320,17 +320,194 @@ students.add(s1);
 students.add(s2);
 students.add("hello");
 
-Steudnt stu = (Student)students.get(0);
+Student stu = (Student)students.get(0);
 stu.setScore(100);
 ```
 
+编译并运行 , 你会发现这段代码通过了编译并且可以运行了 , 这显然并不合理 , 我们希望的是学生列表内只能存储学生信息 , 并且它在我们犯错误前可以给我们一些提示 , 如发生异常或给出一些提示 . 并不是无限的包容.
 
-### 9.6.2 集合与多态 
+泛型给我们提供了这样的特性 , 我们对上面的代码进行这样的改动
 
-### 9.6.3 面向接口
+```java
+Student stu1 = new Student();
+Student stu2 = new Student();
+
+ArrayList<Student> students = new ArrayList<>();
+students.add(stu1);
+students.add(stu2);
+
+Student stu = students.get(0);
+stu.setScore(100);
+```
+
+可以看到在创建ArrayList类型后面加上了一对尖括号 , 其中的Student表示的是ArrayList所接受的类型 . 
+
+这样我们就指定了ArrayList可以容纳的类型 , 同时 ArrayList 的get方法的返回值就变成了返回尖括号中指定的类型 , 也就免去了强制类型转换的麻烦 .
+
+这时我们再向学生列表中加入一些其他类型的元素.
+
+```
+students.add("hello");
+```
+
+编译,这时候编译器报错了
+
+```
+Error:(47, 22) java: 不兼容的类型: java.lang.String无法转换为cn.ntboy.Student
+```
+
+### 9.6.2 泛型集合的好处
+
+1. **类型安全** . 泛型的主要目标是提高 Java 程序的类型安全。通过知道使用泛型定义的变量的类型限制，编译器可以在一个高得多的程度上验证类型假设。没有泛型，这些假设就只存在于程序员的头脑中（或者如果幸运的话，还存在于代码注释中）。
+   
+2. **消除强制类型转换**。 泛型的一个附带好处是，消除源代码中的许多强制类型转换。这使得代码更加可读，并且减少了出错机会。
+   
+3. **潜在的性能收益**。 泛型为较大的优化带来可能。在泛型的初始实现中，编译器将强制类型转换（没有泛型的话，程序员会指定这些强制类型转换）插入生成的字节码中。但是更多类型信息可用于编译器这一事实，为未来版本的 JVM 的优化带来可能。由于泛型的实现方式，支持泛型（几乎）不需要 JVM 或类文件更改。所有工作都在编译器中完成，编译器生成类似于没有泛型（和强制类型转换）时所写的代码，只是更能确保类型安全而已。
+
+### 9.6.3 使用泛型集合
+
+像上面的ArrayList一样 , Collection接口都有泛型参数 , 我们可以通过泛型参数指定容器内元素的类型
+
+如下:
+
+```java
+ArrayList<Student> students = new ArrayList<>();
+HashSet<Integer> odd = new HashSet<>();
+HashMap<String,Student> nameMap = new HashMap<>(); 
+```
+
+
+### 9.6.4 集合与多态 
+
+考虑下面场景 , 还是上面的学生列表
+
+```java
+ArrayList<Student> students = new ArrayList<>();
+```
+
+有一天你觉得ArrayList不好用决定改成LinkedList
+
+```java
+LinkedList<student> students = new LinkedList<>();
+```
+
+这样以来，用到你的list的地方都得更改类型声明。更重要的是，用到你的list的人，他们写自己的代码的时候是基于“你的这个list是一个ArrayList ”这样的前提来写的，你突然把它改成了LinkedList，很可能导致他们的程序出错或者需要重写。
+
+那么就有了这样一个问题 , 如何修改自己的实现而不影响别人使用呢?
+
+多态性给了我们答案 , 当你声明一个变量的时候，把它的类型声明得越笼统越好，越具体越糟糕。笼统对修改是友好的，具体对修改不友好。
+
+```java
+List<Student> students = new ArrayList<>();
+```
+
+或者
+
+```java
+List<Student> students = new LinkedList<>();
+```
+
+### 9.6.5 面向接口
+
+!> [详见](https://www.cnblogs.com/iceb/p/7093884.html)
 
 ## 9.7 Collections和Arrays工具类
 
-## 9.8 Iterator 迭代器
+### 9.7.1 Collections工具类
+
+集合框架中的工具类：特点：该工具类中的方法都是静态的。
+
+### 9.7.2 Arrays工具类
+
+用于对数组操作的工具类
+
+## 9.8 遍历容器
+
+### 9.8.1 List的遍历
+
+1. List 接口中有按照索引取元素的方法
+
+```java
+List<E> list = ...;
+for(int i = 0; i < list.size(); i++){
+    E item = list.get(i);
+    ...
+}
+```
+
+2. foreach 是java编译器提供的语法糖 , 它在处理实现了Iterable接口的类上使用Iterator进行迭代 , 对数组则使用简单for循环迭代
+
+```java
+List<String> list = new ArrayList<>();
+list.add("hello");
+list.add("world");
+
+for(String item:list){
+    System.out.println(item);
+}
+```
+
+3. Iterator迭代器
+
+```java
+List<String> list = new ArrayList<>();
+list.add("hello");
+list.add("world");
+
+Iterator it = list.iterator();
+while(it.hasNext()){
+	System.out.println(it.next());
+}
+``` 
+
+### 9.8.2 Set的遍历
+
+1. foreach
+2. Iterator迭代器
+
+这两个遍历方式本质上是一样的foreach语法糖会被编译为迭代器版本
+
+### 9.8.3 Map的遍历
+
+1. **keySet**
+
+```java
+Map<String, String> map = new HashMap<>();
+map.put("hello", "world");
+map.put("goodbye", "world");
+
+Set<String> keySet = map.keySet();
+for (String key : keySet) {
+	System.out.printf("key=%s,value=%s%n", key, map.get(key));
+}
+```
+
+2. **entrySet**
+
+```java
+Map<String, String> map = new HashMap<>();
+map.put("hello", "world");
+map.put("goodbye", "world");
+
+Set<Map.Entry<String, String>> entrySet = map.entrySet();
+
+for (Map.Entry<String, String> entry : entrySet) {
+	System.out.printf("key=%s,value=%s%n",entry.getKey(),entry.getValue());
+}
+```
 
 ## 9.9 java.util.concurrent包
+
+J.U.C并发包，即java.util.concurrent包，是JDK的核心工具包，是JDK1.5之后，由 Doug Lea实现并引入。
+
+整个java.util.concurrent包，按照功能可以大致划分如下：
+
+- juc-locks 锁框架
+- juc-atomic 原子类框架
+- juc-sync 同步器框架
+- juc-collections 集合框架
+- juc-executors 执行器框架
+
+其中juc-collections包含了许多在多线程框架下常用的集合类
+
+!> 详见[java多线程进阶](https://segmentfault.com/a/1190000015558984)

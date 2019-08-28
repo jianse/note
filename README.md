@@ -2,7 +2,6 @@
 
 ?> _TODO_ 数据结构待添加 
 
-
 # 操作系统
 
 # 数据库原理与应用
@@ -11,13 +10,13 @@
 
 # Mysql数据库
 
-# Java se
+# JavaSE
 
-See the [java se](/javase/) 
+See the [JavaSE](/javase/) 
 
 # JDBC
 
-# Java ee
+# JavaEE
 
 # Spring
 

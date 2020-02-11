@@ -112,11 +112,13 @@ JVM默认会将workspace作为相对路径，即user.dir系统变量所指路径
 
 * 常用方法
 
+```text
 String getName() -如果file对象是一个文件，则返回文件名，如果是路径，则返回路径的最后一级
 
 File getAbsoluteFile() -返回绝对路径
 
 String getParent() -返回file对象所在目录的父目录
+```
 
 * 检查文件
 
